@@ -110,10 +110,10 @@ var questionNumber = 0;
 //Variable to track which open has been chosen by the user.  
 var optionChosen = 0; 
 
-//When Start button is clicked, run the questionGen function.
+//When Start button is clicked, run the questionGen function. *WORKING*
 	$('.start').on("click", function(){
-		questionGen(questionNumber)}
-	);
+		questionGen(questionNumber)
+	});
 
 //Code to take note of which option the user has chosen before they hit final answer.
 	$('#option1').on("click", function(){
@@ -130,8 +130,8 @@ var optionChosen = 0;
 	});
 
 //Code to confirm whether or not the answer was correct. 
-$('.finalAnswer').on('click', function(){
-	console.log("Final answer has been hit.")
+$('.answerArea').on('click', '#final', function(){
+	console.log("Final answer has been hit.");
 	finalAnswer(optionChosen, questionNumber)
 });
 
@@ -151,7 +151,7 @@ function questionGen(questionNumber){
 	$('.answerArea').append((questions[questionNumber]).option2);
 	$('.answerArea').append((questions[questionNumber]).option3);
 	$('.answerArea').append((questions[questionNumber]).option4);
-	$('.answerArea').append("<button class = 'btn btn-success finalAnswer'>Final Answer?</button>"); 
+	$('.answerArea').append("<button class = 'btn btn-success' id = 'final'>Final Answer?</button>"); 
 }
 
 //Checks whether or not the answer that was chosen is in fact the correct answer, then push the proper screen out to the DOM. 
@@ -161,11 +161,11 @@ function finalAnswer(option, questionNo){
 	 }
 	 else if(option == questions[questionNo].correctAnswer){
 	 	//Go to correct answer screen
+	 	questionNumber++;
 	 }
 	 else{
 	 	//Go to incorrect answer screen
+	 	questionNumber++;
 	 }
-	questionNumber++;
-	console.log(questionNumber);
 }
 });
