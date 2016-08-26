@@ -161,6 +161,10 @@ function finalAnswer(option, questionNo){
 	 }
 	 else if(option == questions[questionNo].correctAnswer){
 	 	//Go to correct answer screen
+	 	$('.jumbotron').empty();
+	 	$('.question').empty();
+	 	$('.answerArea').empty();
+	 	$('.jumbotron').html("<img src = '"+questions[questionNo].image+"'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	questionNumber++;
 	 }
 	 else{
