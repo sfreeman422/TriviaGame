@@ -47,6 +47,51 @@ var questions = [
 		image: "../images/cream.jpg",
 		song: "../sounds/cream.mp3"
 	}
+	question6 = {
+		question: "<h4>What two famous rappers starred in the stoner classic 'How High'?</h4>",
+		option1: "<div class='option' id = '1'>Jay-z & Ice Cube</div>",
+		option2: "<div class='option' id = '2'>Method Man and Red Man</div>",
+		option3: "<div class='option' id = '3'>Biggie Smalls and Tupac</div>",
+		option4: "<div class='option' id = '4'>Snoop Dogg & Ice Cube</div>",
+		correctAnswerDisplay: "<p>Method Man and Redman starred in the stoner classic 'How High', a movie about smoking your friends ashes to work your way into an Ivy League school.</p>",
+		image: "../images/howhigh.jpg"
+	}
+	question7 = {
+		question: "<h4>Which rap group was the movie Straight Outta Compton about?</h4>",
+		option1: "<div class='option' id = '1'>Wu Tang Clan</div>",
+		option2: "<div class='option' id = '2'>Young Money</div>",
+		option3: "<div class='option' id = '3'>A Tribe Called Quest</div>",
+		option4: "<div class='option' id = '4'>NWA</div>",
+		correctAnswerDisplay: "<p>Straight Outta Compton is a 2015 American biographical film directed by F. Gary Gray, depicting the career of gangsta rap group N.W.A. Titled after N.W.A's 1988 debut studio album, the film focuses on members Eazy-E, Ice Cube, and Dr. Dre. Members of N.W.A were involved in making the film: Ice Cube and Dr. Dre were among its producers, as was Eazy-E's widow, Tomica Woods-Wright, while MC Ren and DJ Yella served as creative consultants. Ice Cube is portrayed by his son, O'Shea Jackson, Jr., with Corey Hawkins as Dr. Dre and Jason Mitchell as Eazy-E. Paul Giamatti also stars as N.W.A's manager Jerry Heller.</p>",
+		image: "../images/nwa.jpg"
+	}
+	question8 = {
+		question: "<h4>Who is Marshall Mathers?</h4>",
+		option1: "<div class='option' id = '1'>Young Thug</div>",
+		option2: "<div class='option' id = '2'>Lil Wayne</div>",
+		option3: "<div class='option' id = '3'>Lil Dickie</div>",
+		option4: "<div class='option' id = '4'>Eminem</div>",
+		correctAnswerDisplay: "<p>Marshall Bruce Mathers III (born October 17, 1972), known professionally as Eminem, is an American rapper, songwriter, record producer, and actor from Detroit, Michigan. In addition to his solo career, he is a member of D12, and with Royce da 5'9 is one half of the hip-hop duo Bad Meets Evil. Eminem is the best-selling artist of the 2000s in the United States. Rolling Stone ranked him 83rd on its list of 100 Greatest Artists of All Time, calling him the King of Hip Hop. Including his work with D12 and Bad Meets Evil, Eminem has had ten number-one albums on the Billboard 200. He has sold more than 172 million albums, making him one of the world's best-selling artists</p>",
+		image: "../images/eminem.jpg"	
+	}
+	question9 = {
+		question: "<h4>What drug is commonly associated with and mentioned in Southern Rap lyrics?</h4>",
+		option1: "<div class='option' id = '1'>Weed</div>",
+		option2: "<div class='option' id = '2'>Cocaine</div>",
+		option3: "<div class='option' id = '3'>Lean</div>",
+		option4: "<div class='option' id = '4'>Heroin</div>",
+		correctAnswerDisplay: "<p>Purple drank or lean is a slang term for a concoction which includes a prescription-strength cough syrup used in a manner inconsistent with its labeling, thus making it a recreational drug. The mixture became popular in the hip hop community in the southern United States, originating in Houston. The prescription-strength cough syrup used in purple drank contains codeine and promethazine (not to be confused with dextromethorphan; DXM). The cough syrup, used in doses much higher than medically recommended, is typically mixed with ingredients such as the soft drinks Sprite or Mountain Dew and optionally, a Jolly Rancher hard fruit candy thrown in for extra sweetness. The purplish hue of purple drank comes from dyes in the cough syrup. The amount of cough syrup used can exceed up to 25 times the recommended dose. The concoction is typically consumed out of Styrofoam cups.</p>",
+		image: "../images/lean.jpg"
+	}
+	question10 = {
+		question: "<h4>Who released an album titled Flockaveli?</h4>",
+		option1: "<div class='option' id = '1'>Chief Keef</div>",
+		option2: "<div class='option' id = '2'>Dr Dre</div>",
+		option3: "<div class='option' id = '3'>Waka Flocka Flame</div>",
+		option4: "<div class='option' id = '4'>Gucci Mane</div>",
+		correctAnswerDisplay: "<p>Flockaveli is the 2010 debut studio album by American rapper Waka Flocka Flame. Its title was taken after the Italian political theorist Machiavelli, and inspired by American rapper Tupac Shakur, whose final stage name and pseudonym before his death was Makaveli. The album was recorded at Next Level Studios in Houston, Nightbird Studios in Los Angeles, and S-Line Ent. in Atlanta. Released by Asylum Records on October 5, 2010, Flockaveli received generally positive reviews from critics, who complimented its musical intensity, brazen lyrics, and gangsta rap ethos. It debuted at number six on the Billboard 200, with first-week sales of 37,000 copies, and, as of August 15, 2011, has sold 285,000 copies in the United States.</p>",
+		image: "../images/flocka.jpg"
+	}
 ]
 //Variable that tracks which question number we are on. 
 var questionNumber = 0;
