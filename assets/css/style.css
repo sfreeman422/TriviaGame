@@ -79,6 +79,16 @@ html {
 	display: none;
 }
 
-p .error{
-	font-color: red;
+.error p{
+	color: red;
+}
+
+.jumbotron{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+h1, p{
+	color: white;
+}
+.jumbotron h1{
+	color: white;
 }
