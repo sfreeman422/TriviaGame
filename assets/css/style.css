@@ -1,3 +1,4 @@
+
 html {
     position: relative;
     min-height: 100%;
@@ -79,5 +80,9 @@ html {
 }
 
 p .error{
-	color: red;
+	font-color: red;
+}
+
+.jumbotron{
+	background-color: rgba(0, 0, 0, 0.3);
 }
