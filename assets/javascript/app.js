@@ -1,4 +1,5 @@
 $(document).ready(function(){
+$('.carousel').carousel();
 //Questions array that holds all of the question objects. 
 var questions = [
 	question1 = {
@@ -129,9 +130,9 @@ var optionChosen = 0;
 	});
 
 //Code to confirm whether or not the answer was correct. 
-$('#finalAnswer').on('click', function(){
+$('.finalAnswer').on('click', function(){
 	console.log("Final answer has been hit.")
-	finalAnswer(optionChosen, questionNumber);
+	finalAnswer(optionChosen, questionNumber)
 });
 
 
@@ -150,7 +151,7 @@ function questionGen(questionNumber){
 	$('.answerArea').append((questions[questionNumber]).option2);
 	$('.answerArea').append((questions[questionNumber]).option3);
 	$('.answerArea').append((questions[questionNumber]).option4);
-	$('.answerArea').append("<button class = 'btn btn-success' id = 'finalAnswer'>Final Answer?</button>"); 
+	$('.answerArea').append("<button class = 'btn btn-success finalAnswer'>Final Answer?</button>"); 
 }
 
 //Checks whether or not the answer that was chosen is in fact the correct answer, then push the proper screen out to the DOM. 
