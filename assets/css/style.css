@@ -86,9 +86,28 @@ html {
 .jumbotron{
 	background-color: rgba(0, 0, 0, 0.8);
 }
-h1, p{
+h1, p, h4{
 	color: white;
 }
+
+h4{
+	text-align: center;
+}
+
 .jumbotron h1{
 	color: white;
+}
+
+#final{
+	text-align: center;
+}
+.option{
+	width: 25%;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+}
+
+#final{
+	margin: 0 auto;
 }

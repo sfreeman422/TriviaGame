@@ -116,21 +116,25 @@ var optionChosen = 0;
 	});
 
 //Code to take note of which option the user has chosen before they hit final answer.
-	$('#option1').on("click", function(){
+	$('.jumbotron').on("click", '#option1', function(){
 		optionChosen = 1; 
+		$('#option1').css('background-color', 'green') 
 	});
-	$('#option2').on("click", function(){
+	$('.jumbotron').on("click", '#option2', function(){
 		optionChosen = 2; 
+		$('#option2').css('background-color', 'green') 
 	});
-	$('#option3').on("click", function(){
+	$('.jumbotron').on("click", '#option3', function(){
 		optionChosen = 3; 
+		$('#option3').css('background-color', 'green') 
 	});
-	$('#option4').on("click", function(){
-		optionChosen = 4; 
+	$('.jumbotron').on("click", '#option4', function(){
+		optionChosen = 4;
+		$('#option4').css('background-color', 'green') 
 	});
 
 //Code to confirm whether or not the answer was correct. 
-$('.answerArea').on('click', '#final', function(){
+$('.jumbotron').on('click', '#final', function(){
 	console.log("Final answer has been hit.");
 	finalAnswer(optionChosen, questionNumber)
 });
@@ -142,34 +146,33 @@ $('.answerArea').on('click', '#final', function(){
 //Generates a question based on the number in questionNumber. This questionNumber variable is used to track which question we are on as we work through the questions array. 
 function questionGen(questionNumber){
 	$('.jumbotron').empty();
-	$('.jumbotron').css('background-image', questions[questionNumber].image);
-	$('.question').empty();
-	$('.answerArea').empty();
-	$('#questionZone').show();
-	$('.question').html((questions[questionNumber]).question);
-	$('.answerArea').append((questions[questionNumber]).option1);
-	$('.answerArea').append((questions[questionNumber]).option2);
-	$('.answerArea').append((questions[questionNumber]).option3);
-	$('.answerArea').append((questions[questionNumber]).option4);
-	$('.answerArea').append("<button class = 'btn btn-success' id = 'final'>Final Answer?</button>"); 
+	$('.jumbotron').append((questions[questionNumber]).question);
+	$('.jumbotron').append((questions[questionNumber]).option1);
+	$('.jumbotron').append((questions[questionNumber]).option2);
+	$('.jumbotron').append((questions[questionNumber]).option3);
+	$('.jumbotron').append((questions[questionNumber]).option4);
+	$('.jumbotron').append("<button class = 'btn btn-success' id = 'final'>Final Answer?</button>"); 
+	$('.jumbotron').append("<div class = 'error text-center'></div>")
 }
 
 //Checks whether or not the answer that was chosen is in fact the correct answer, then push the proper screen out to the DOM. 
 function finalAnswer(option, questionNo){
 	 if(option == 0){
 	 	$('.error').html("<p id = 'errorMessage'>Please choose an answer!</p>");
+	 	
 	 }
 	 else if(option == questions[questionNo].correctAnswer){
 	 	//Go to correct answer screen
 	 	$('.jumbotron').empty();
-	 	$('.question').empty();
-	 	$('.answerArea').empty();
 	 	$('.jumbotron').html("<img src = '"+questions[questionNo].image+"'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	questionNumber++;
+	 	
 	 }
 	 else{
-	 	//Go to incorrect answer screen
+	 	$('.jumbotron').empty();
+	 	$('.jumbotron').html("<p>Ohhh what a shame you didn't get it right!</p><img src = '"+questions[questionNo].image+"'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	questionNumber++;
+	 	
 	 }
 }
 });
