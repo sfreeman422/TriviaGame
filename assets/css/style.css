@@ -78,7 +78,9 @@ html {
 #questionZone{
 	display: none;
 }
-
+.end p{
+	text-align: center;
+}
 .error p{
 	color: red;
 }

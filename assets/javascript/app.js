@@ -133,7 +133,7 @@ var optionChosen = 0;
 		$('#option4').css('background-color', 'green') 
 	});
 	$('.jumbotron').on("click", "#next", function(){
-		questionGen(questionNumber);
+		nextQuestion(questionNumber);
 	})
 
 //Code to confirm whether or not the answer was correct. 
@@ -154,7 +154,7 @@ function questionGen(questionNumber){
 	$('.jumbotron').append((questions[questionNumber]).option2);
 	$('.jumbotron').append((questions[questionNumber]).option3);
 	$('.jumbotron').append((questions[questionNumber]).option4);
-	$('.jumbotron').append("<button class = 'btn btn-success' id = 'final'>Final Answer?</button>"); 
+	$('.jumbotron').append("<div class = 'text-center'><button class = 'btn btn-success' id = 'final'>Final Answer?</button></div>"); 
 	$('.jumbotron').append("<div class = 'error text-center'></div>")
 }
 
@@ -188,9 +188,9 @@ function nextQuestion(questionNumber){
 	}
 	else{
 		$('.jumbotron').empty();
-		$('.jumbotron').append("<p>Congratulations! You got X right and Y wrong!</p>");
-		$('.jumbotron').append("<p>Would you like to play again?</p>");
-		$('.jumbotron').append("<button class = 'btn btn-success id = 'reset'>New Game</button>");
+		$('.jumbotron').append("<div class = 'end'><p>Congratulations! You got X right and Y wrong!</p></div>");
+		$('.jumbotron').append("<div class = 'end'><p>Would you like to play again?</p></div>");
+		$('.jumbotron').append("<div class = 'text-center'><button class = 'btn btn-success id = 'reset'>New Game</button></div>");
 	}
 
 }
