@@ -46,21 +46,21 @@ html {
     }
 }
 .item:nth-child(1) {
-    background: url(https://images4.alphacoders.com/196/196086.jpg) no-repeat center center fixed;
+    background: url('../images/asapbg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .item:nth-child(2) {
-    background: url(https://wallpaperscraft.com/image/cypress_hill_music_rap_hip_hop_bw_performance_100177_1920x1080.jpg) no-repeat center center fixed;
+    background: url('../images/cypressbg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .item:nth-child(3) {
-    background: url(https://userscontent2.emaze.com/images/6a566ae5-bb74-4775-af02-cf1436163bac/42ed27f84e71a41b76ccccc66e9c5af3.jpeg) no-repeat center center fixed;
+    background: url('../images/tupacbg.jpeg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -104,7 +104,7 @@ h4{
 	text-align: center;
 }
 .option{
-	width: 50%;
+	width: 60%;
 	margin: 0 auto;
 	color: white;
 	text-align: center;

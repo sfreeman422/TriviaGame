@@ -110,6 +110,12 @@ var questionNumber = 0;
 //Variable to track which open has been chosen by the user.  
 var optionChosen = 0; 
 
+//Variable to track the number of correct answers you provided.
+var correct = 0; 
+
+//Variable to track the number of incorrect answers you provided.
+var incorrect = 0; 
+
 //When Start button is clicked, run the questionGen function. *WORKING*
 	$('.start').on("click", function(){
 		questionGen(questionNumber)
@@ -118,22 +124,29 @@ var optionChosen = 0;
 //Code to take note of which option the user has chosen before they hit final answer.
 	$('.jumbotron').on("click", '#option1', function(){
 		optionChosen = 1; 
-		$('#option1').css('background-color', 'green') 
+		$('#option1').css('background-color', 'rgba(20, 183, 20, 0.48)') 
 	});
 	$('.jumbotron').on("click", '#option2', function(){
 		optionChosen = 2; 
-		$('#option2').css('background-color', 'green') 
+		$('#option2').css('background-color', 'rgba(20, 183, 20, 0.48)') 
 	});
 	$('.jumbotron').on("click", '#option3', function(){
 		optionChosen = 3; 
-		$('#option3').css('background-color', 'green') 
+		$('#option3').css('background-color', 'rgba(20, 183, 20, 0.48)') 
 	});
 	$('.jumbotron').on("click", '#option4', function(){
 		optionChosen = 4;
-		$('#option4').css('background-color', 'green') 
+		$('#option4').css('background-color', 'rgba(20, 183, 20, 0.48)') 
 	});
 	$('.jumbotron').on("click", "#next", function(){
 		nextQuestion(questionNumber);
+	})
+	$('.jumbotron').on("click", "#reset", function(){
+		questionNumber = 0;
+		optionChosen = 0; 
+		correct = 0; 
+		incorrect = 0; 
+		questionGen(questionNumber);
 	})
 
 //Code to confirm whether or not the answer was correct. 
@@ -170,6 +183,7 @@ function finalAnswer(option, questionNo){
 	 	questionNumber++;
 	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>");
 	 	optionChosen = 0;  
+	 	correct++;
 	 }
 	 else{
 	 	$('.jumbotron').empty();
@@ -177,6 +191,7 @@ function finalAnswer(option, questionNo){
 	 	questionNumber++;
 	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>"); 
 	 	optionChosen = 0;
+	 	wrong++;
 	 }
 	console.log(questionNumber);
 }
@@ -188,9 +203,9 @@ function nextQuestion(questionNumber){
 	}
 	else{
 		$('.jumbotron').empty();
-		$('.jumbotron').append("<div class = 'end'><p>Congratulations! You got X right and Y wrong!</p></div>");
+		$('.jumbotron').append("<div class = 'end'><p>Congratulations! You got "+correct+" right and "+incorrect+" wrong!</p></div>");
 		$('.jumbotron').append("<div class = 'end'><p>Would you like to play again?</p></div>");
-		$('.jumbotron').append("<div class = 'text-center'><button class = 'btn btn-success id = 'reset'>New Game</button></div>");
+		$('.jumbotron').append("<div class = 'text-center'><button class = 'btn btn-success' id ='reset'>New Game</button></div>");
 	}
 
 }

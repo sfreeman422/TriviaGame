@@ -1,5 +1,5 @@
 To Do:
-1. Fix button position
-2. Set timers on each question (10, 5 or 3 seconds?)
-3. change green color on chosen to something a bit more transparent. 
-4. Dont allow more than one option to be green at a time. 
+1. Set timers on each question (10, 5 or 3 seconds?)
+2. Dont allow more than one option to be green at a time. 
+3. Adjust size of green
+4. New game button
