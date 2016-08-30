@@ -1,5 +1,7 @@
 $(document).ready(function(){
+//Carousel is a function for bootstraps javascript. It allows for the background carousel to function. 
 $('.carousel').carousel();
+
 //Questions array that holds all of the question objects. 
 var questions = [
 	question1 = {
@@ -116,12 +118,12 @@ var correct = 0;
 //Variable to track the number of incorrect answers you provided.
 var incorrect = 0; 
 
-//When Start button is clicked, run the questionGen function. *WORKING*
+//When Start button is clicked, run the questionGen function.
 	$('.start').on("click", function(){
 		questionGen(questionNumber)
 	});
 
-//Code to take note of which option the user has chosen before they hit final answer.
+//All possible on click actions. 
 	$('.jumbotron').on("click", '#option1', function(){
 		optionChosen = 1; 
 		$('#option1').css('background-color', 'rgba(20, 183, 20, 0.48)') 
@@ -191,7 +193,7 @@ function finalAnswer(option, questionNo){
 	 	questionNumber++;
 	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>"); 
 	 	optionChosen = 0;
-	 	wrong++;
+	 	incorrect++;
 	 }
 	console.log(questionNumber);
 }

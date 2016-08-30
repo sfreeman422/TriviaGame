@@ -105,7 +105,7 @@ h4{
 	text-align: center;
 }
 .option{
-	width: 60%;
+	width: 100%;
 	margin: 0 auto;
 	color: white;
 	text-align: center;
@@ -122,7 +122,6 @@ h4{
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
-
   display: flex;
   align-items: center;
 }
