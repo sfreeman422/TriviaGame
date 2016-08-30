@@ -166,14 +166,14 @@ function finalAnswer(option, questionNo){
 	 else if(option == questions[questionNo].correctAnswer){
 	 	//Go to correct answer screen
 	 	$('.jumbotron').empty();
-	 	$('.jumbotron').html("<img src = '"+questions[questionNo].image+"'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
+	 	$('.jumbotron').html("<img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	questionNumber++;
 	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>");
 	 	optionChosen = 0;  
 	 }
 	 else{
 	 	$('.jumbotron').empty();
-	 	$('.jumbotron').html("<p>Ohhh what a shame you didn't get it right!</p><img src = '"+questions[questionNo].image+"'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
+	 	$('.jumbotron').html("<p>Ohhh what a shame you didn't get it right!</p><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	questionNumber++;
 	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>"); 
 	 	optionChosen = 0;
