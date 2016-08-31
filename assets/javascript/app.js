@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 //Carousel is a function for bootstraps javascript. It allows for the background carousel to function. 
 $('.carousel').carousel();
 
@@ -118,6 +119,12 @@ var correct = 0;
 //Variable to track the number of incorrect answers you provided.
 var incorrect = 0; 
 
+//Variable to set number counter to 5 seconds.
+var startAt = 5;
+
+//Variable that displays the time remaining on screen. 
+var number = startAt;
+
 //When Start button is clicked, run the questionGen function.
 	$('.start').on("click", function(){
 		questionGen(questionNumber)
@@ -153,7 +160,6 @@ var incorrect = 0;
 
 //Code to confirm whether or not the answer was correct. 
 $('.jumbotron').on('click', '#final', function(){
-	console.log("Final answer has been hit.");
 	finalAnswer(optionChosen, questionNumber)
 });
 
@@ -164,13 +170,15 @@ $('.jumbotron').on('click', '#final', function(){
 //Generates a question based on the number in questionNumber. This questionNumber variable is used to track which question we are on as we work through the questions array. 
 function questionGen(questionNumber){
 	$('.jumbotron').empty();
+	$('.jumbotron').append("<div class = timer><h2>5</h2></div>")
 	$('.jumbotron').append((questions[questionNumber]).question);
 	$('.jumbotron').append((questions[questionNumber]).option1);
 	$('.jumbotron').append((questions[questionNumber]).option2);
 	$('.jumbotron').append((questions[questionNumber]).option3);
 	$('.jumbotron').append((questions[questionNumber]).option4);
 	$('.jumbotron').append("<div class = 'text-center'><button class = 'btn btn-success' id = 'final'>Final Answer?</button></div>"); 
-	$('.jumbotron').append("<div class = 'error text-center'></div>")
+	$('.jumbotron').append("<div class = 'error text-center'></div>");
+	runTimer();
 }
 
 //Checks whether or not the answer that was chosen is in fact the correct answer, then push the proper screen out to the DOM. 
@@ -187,6 +195,14 @@ function finalAnswer(option, questionNo){
 	 	optionChosen = 0;  
 	 	correct++;
 	 }
+	 else if(option == 5){
+	 	$('.jumbotron').empty();
+	 	$('.jumbotron').html("<p>Out of time!</p><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
+	 	questionNumber++;
+	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>"); 
+	 	optionChosen = 0;
+	 	incorrect++;
+	 }
 	 else{
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<p>Ohhh what a shame you didn't get it right!</p><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
@@ -195,7 +211,6 @@ function finalAnswer(option, questionNo){
 	 	optionChosen = 0;
 	 	incorrect++;
 	 }
-	console.log(questionNumber);
 }
 
 function nextQuestion(questionNumber){
@@ -211,4 +226,28 @@ function nextQuestion(questionNumber){
 	}
 
 }
+
+function displayNumber(){
+	$('.timer').html('<h2>'+number+'</h2>');
+}
+
+function runTimer(){
+	counter = setInterval(decrement, 1000);
+}
+
+function decrement(){
+	number--;
+	displayNumber();
+	if(number == 0){
+		stop();
+		finalAnswer(option, questionNumber);
+	}
+}
+
+function stop(){
+	clearInterval(counter);
+	option = 5; 
+	number = 5; 
+}
+
 });
