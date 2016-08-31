@@ -1,4 +1,6 @@
 To Do:
-1. Resolve win/loss counter issue. 
+1. Add timer to win/lose screens to advance the game without user input
 2. Dont allow more than one option to be green at a time. 
 3. Adjust size of green
+4. Add songs that play for the alotted time each win/lose screen is up. 
+

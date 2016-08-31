@@ -13,7 +13,7 @@ var questions = [
 		option4: "<div class='option' id = 'option4'>Marshall Mathers</div>",
 		correctAnswerDisplay: "<p>Christopher Wallace, better known by his stage names The Notorious B.I.G, Biggie, or Biggie Smalls, was an American rapper. He is consistently ranked as one of the greatest and most influential rappers of all time. Wallace was raised in the Brooklyn borough of New York City. When he released his debut album Ready to Die in 1994, he became a central figure in the East Coast hip hop scene and increased New York's visibility in the genre at a time when West Coast hip hop was dominant in the mainstream. The following year, Wallace led his childhood friends to chart success through his protégé group, Junior M.A.F.I.A. While recording his second album, Wallace was heavily involved in the growing East Coast–West Coast hip hop feud. On March 9, 1997, Wallace was killed by an unknown assailant in a drive-by shooting in Los Angeles.</p>",
 		correctAnswer: 2,
-		image: "assets/images/biggie.jpg"
+		image: "assets/images/biggie.jpg",
 	},
 	question2 = {
 		question: "<h4>Who were the original 9 members of the Wu Tang Clan?</h4>",
@@ -64,7 +64,7 @@ var questions = [
 		option4: "<div class='option' id = 'option4'>Snoop Dogg & Ice Cube</div>",
 		correctAnswerDisplay: "<p>Method Man and Redman starred in the stoner classic 'How High', a movie about smoking your friends ashes to work your way into an Ivy League school.</p>",
 		correctAnswer: 2, 
-		image: "assets/images/howhigh.jpg"
+		image: "assets/images/howhigh.JPG"
 	},
 	question7 = {
 		question: "<h4>Which rap group was the movie Straight Outta Compton about?</h4>",
@@ -217,7 +217,7 @@ function finalAnswer(option, questionNo){
 
 //After reviewing the winning screen information, this moves us forward to the next question. 
 function nextQuestion(questionNumber){
-	if(questionNumber < questions.length - 1){
+	if(questionNumber < questions.length){
 		$('.jumbotron').empty();
 		questionGen(questionNumber);
 	}
