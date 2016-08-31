@@ -1,4 +1,4 @@
 To Do:
-1. Set timers on each question (10, 5 or 3 seconds?)
+1. Resolve win/loss counter issue. 
 2. Dont allow more than one option to be green at a time. 
 3. Adjust size of green
