@@ -11,7 +11,7 @@ var questions = [
 		option2: "<div class='option' id = 'option2'>Christopher Wallace</div>",
 		option3: "<div class='option' id = 'option3'>Jeffrey Williams</div>",
 		option4: "<div class='option' id = 'option4'>Marshall Mathers</div>",
-		correctAnswerDisplay: "<p>Christopher Wallace, better known by his stage names The Notorious B.I.G, Biggie, or Biggie Smalls, was an American rapper. He is consistently ranked as one of the greatest and most influential rappers of all time. Wallace was raised in the Brooklyn borough of New York City. When he released his debut album Ready to Die in 1994, he became a central figure in the East Coast hip hop scene and increased New York's visibility in the genre at a time when West Coast hip hop was dominant in the mainstream. The following year, Wallace led his childhood friends to chart success through his protégé group, Junior M.A.F.I.A. While recording his second album, Wallace was heavily involved in the growing East Coast–West Coast hip hop feud. On March 9, 1997, Wallace was killed by an unknown assailant in a drive-by shooting in Los Angeles.</p>",
+		correctAnswerDisplay: "<p>Christopher Wallace, better known by his stage names The Notorious B.I.G, Biggie, or Biggie Smalls, was an American rapper. He is consistently ranked as one of the greatest and most influential rappers of all time. Wallace was raised in the Brooklyn borough of New York City. When he released his debut album Ready to Die in 1994, he became a central figure in the East Coast hip hop scene and increased New York's visibility in the genre at a time when West Coast hip hop was dominant in the mainstream. The following year, Wallace led his childhood friends to chart success through his protege group, Junior M.A.F.I.A. While recording his second album, Wallace was heavily involved in the growing East Coast West Coast hip hop feud. On March 9, 1997, Wallace was killed by an unknown assailant in a drive-by shooting in Los Angeles.</p>",
 		correctAnswer: 2,
 		image: "assets/images/biggie.jpg",
 	},
@@ -160,7 +160,9 @@ var number = startAt;
 
 //Code to confirm whether or not the answer was correct. 
 $('.jumbotron').on('click', '#final', function(){
-	stop();
+	if(optionChosen != 0){
+		stop();
+	}
 	finalAnswer(optionChosen, questionNumber)
 });
 
@@ -177,7 +179,7 @@ function questionGen(questionNumber){
 	$('.jumbotron').append((questions[questionNumber]).option2);
 	$('.jumbotron').append((questions[questionNumber]).option3);
 	$('.jumbotron').append((questions[questionNumber]).option4);
-	$('.jumbotron').append("<div class = 'text-center'><button class = 'btn btn-success' id = 'final'>Final Answer?</button></div>"); 
+	$('.jumbotron').append("<button class = 'btn btn-success' id = 'final'>Final Answer?</button>"); 
 	$('.jumbotron').append("<div class = 'error text-center'></div>");
 	displayNumber();
 	runTimer();
@@ -249,7 +251,6 @@ function decrement(){
 		stop();
 		option = 5; 
 		finalAnswer(option, questionNumber);
-		incorrect++;
 	}
 }
 
