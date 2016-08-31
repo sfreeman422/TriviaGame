@@ -130,7 +130,7 @@ var number = startAt;
 		questionGen(questionNumber)
 	});
 
-//All possible on click actions. 
+//All possible on click actions. Is there a way to clean this up??
 	$('.jumbotron').on("click", '#option1', function(){
 		optionChosen = 1; 
 		changeColors(optionChosen);
@@ -259,7 +259,7 @@ function stop(){
 	number = startAt; 
 }
 
-//If statements to take into account the css changes necessary and to only allow one div to be green at a time
+//Function to check which answer was chosen and then change the background of that option AND ONLY that option to green. 
 function changeColors(option){
 	for(var i = 1; i <= 4; i++){
 		console.log('#option'+i);
