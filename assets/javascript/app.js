@@ -179,6 +179,7 @@ function questionGen(questionNumber){
 	$('.jumbotron').append((questions[questionNumber]).option4);
 	$('.jumbotron').append("<div class = 'text-center'><button class = 'btn btn-success' id = 'final'>Final Answer?</button></div>"); 
 	$('.jumbotron').append("<div class = 'error text-center'></div>");
+	displayNumber();
 	runTimer();
 }
 
@@ -246,6 +247,7 @@ function decrement(){
 	displayNumber();
 	if(number == 0){
 		stop();
+		option = 5; 
 		finalAnswer(option, questionNumber);
 		incorrect++;
 	}
@@ -254,7 +256,6 @@ function decrement(){
 //Stops and clears the timer to get ready for the next question. 5 is being used as an option to show that an option was not chosen. Since wek now there are only 4 options per question, five will only show if the timer runs out
 function stop(){
 	clearInterval(counter);
-	option = 5; 
 	number = startAt; 
 }
 
