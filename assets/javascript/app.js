@@ -120,7 +120,7 @@ var correct = 0;
 var incorrect = 0; 
 
 //Variable to set number counter to 5 seconds.
-var startAt = 5;
+var startAt = 10;
 
 //Variable that displays the time remaining on screen. 
 var number = startAt;
@@ -160,6 +160,7 @@ var number = startAt;
 
 //Code to confirm whether or not the answer was correct. 
 $('.jumbotron').on('click', '#final', function(){
+	stop();
 	finalAnswer(optionChosen, questionNumber)
 });
 
@@ -170,7 +171,7 @@ $('.jumbotron').on('click', '#final', function(){
 //Generates a question based on the number in questionNumber. This questionNumber variable is used to track which question we are on as we work through the questions array. 
 function questionGen(questionNumber){
 	$('.jumbotron').empty();
-	$('.jumbotron').append("<div class = timer><h2>5</h2></div>")
+	$('.jumbotron').append("<div class = timer></div>")
 	$('.jumbotron').append((questions[questionNumber]).question);
 	$('.jumbotron').append((questions[questionNumber]).option1);
 	$('.jumbotron').append((questions[questionNumber]).option2);
@@ -213,6 +214,7 @@ function finalAnswer(option, questionNo){
 	 }
 }
 
+//After reviewing the winning screen information, this moves us forward to the next question. 
 function nextQuestion(questionNumber){
 	if(questionNumber < questions.length - 1){
 		$('.jumbotron').empty();
@@ -227,27 +229,33 @@ function nextQuestion(questionNumber){
 
 }
 
+//Pushes the number to the screen to show the user where they are at in the timer. 
 function displayNumber(){
 	$('.timer').html('<h2>'+number+'</h2>');
 }
 
+//Begins the timer and is called each time that a new quetsion is generated. 
 function runTimer(){
 	counter = setInterval(decrement, 1000);
 }
 
+//Decrements the number on screen based on runTimer's settings. This is what is used to show the user the countdown.
 function decrement(){
+	displayNumber();
 	number--;
 	displayNumber();
 	if(number == 0){
 		stop();
 		finalAnswer(option, questionNumber);
+		incorrect++;
 	}
 }
 
+//Stops and clears the timer to get ready for the next question. 5 is being used as an option to show that an option was not chosen. Since wek now there are only 4 options per question, five will only show if the timer runs out
 function stop(){
 	clearInterval(counter);
 	option = 5; 
-	number = 5; 
+	number = startAt; 
 }
 
 });
