@@ -133,19 +133,19 @@ var number = startAt;
 //All possible on click actions. 
 	$('.jumbotron').on("click", '#option1', function(){
 		optionChosen = 1; 
-		$('#option1').css('background-color', 'rgba(20, 183, 20, 0.48)') 
+		changeColors(optionChosen);
 	});
 	$('.jumbotron').on("click", '#option2', function(){
 		optionChosen = 2; 
-		$('#option2').css('background-color', 'rgba(20, 183, 20, 0.48)') 
+		changeColors(optionChosen);
 	});
 	$('.jumbotron').on("click", '#option3', function(){
 		optionChosen = 3; 
-		$('#option3').css('background-color', 'rgba(20, 183, 20, 0.48)') 
+		changeColors(optionChosen);
 	});
 	$('.jumbotron').on("click", '#option4', function(){
 		optionChosen = 4;
-		$('#option4').css('background-color', 'rgba(20, 183, 20, 0.48)') 
+		changeColors(optionChosen);
 	});
 	$('.jumbotron').on("click", "#next", function(){
 		nextQuestion(questionNumber);
@@ -259,4 +259,16 @@ function stop(){
 	number = startAt; 
 }
 
+//If statements to take into account the css changes necessary and to only allow one div to be green at a time
+function changeColors(option){
+	for(var i = 1; i <= 4; i++){
+		console.log('#option'+i);
+		if(option == i){
+			$('#option'+i).css('background-color', 'rgba(35, 255, 46, 0.54)');
+		}
+		else{
+			$('#option'+i).css('background-color', 'rgba(0, 0, 0, 0)');
+		}
+	}
+}
 });
