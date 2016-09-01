@@ -125,6 +125,9 @@ var startAt = 15;
 //Variable that displays the time remaining on screen. 
 var number = startAt;
 
+//Variable to indicate whether or not we are on a win/loss screen
+var winLossIndicator = false; 
+
 //When Start button is clicked, run the questionGen function.
 	$('.start').on("click", function(){
 		questionGen(questionNumber)
@@ -182,6 +185,7 @@ function questionGen(questionNumber){
 	$('.jumbotron').append((questions[questionNumber]).option4);
 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'final'>Final Answer?</button>"); 
 	$('.jumbotron').append("<div class = 'error text-center'></div>");
+	winLossIndicator = false; 
 	displayNumber();
 	runTimer();
 }
@@ -199,6 +203,8 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>");
 	 	optionChosen = 0;  
 	 	correct++;
+	 	winLossIndicator = true; 
+	 	runTimer();
 	 }
 	 else if(option == 5){
 	 	$('.jumbotron').empty();
@@ -207,14 +213,18 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>"); 
 	 	optionChosen = 0;
 	 	incorrect++;
+	 	winLossIndicator = true; 
+	 	runTimer();
 	 }
 	 else{
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<p>Ohhh what a shame you didn't get it right!</p><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	questionNumber++;
-	 	$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>"); 
+	 	//$('.jumbotron').append("<button class = 'btn btn-success' id = 'next'>Next Question</button>"); 
 	 	optionChosen = 0;
 	 	incorrect++;
+	 	winLossIndicator = true; 
+	 	runTimer();
 	 }
 }
 
@@ -223,6 +233,7 @@ function nextQuestion(questionNumber){
 	if(questionNumber < questions.length){
 		$('.jumbotron').empty();
 		questionGen(questionNumber);
+		winLossIndicator = false; 
 	}
 	else{
 		$('.jumbotron').empty();
@@ -248,10 +259,14 @@ function decrement(){
 	displayNumber();
 	number--;
 	displayNumber();
-	if(number == 0){
+	if(number == 0 && winLossIndicator == false){
 		stop();
 		option = 5; 
 		finalAnswer(option, questionNumber);
+	}
+	else if(number == 0 && winLossIndicator == true){
+		stop();
+		nextQuestion(questionNumber);
 	}
 }
 
