@@ -130,13 +130,28 @@ var winLossIndicator = false;
 
 //Variable to account for correct sound.
 var yay = new Audio("assets/sounds/yay.mp3");
+yay.volume = 0.3; 
 
 //Variable to account for incorrect/time out sound. 
 var boo = new Audio("assets/sounds/fail.mp3");
+boo.volume = 0.3; 
+//Variable to declare theme
+var millionaire = new Audio("assets/sounds/millionaire.mp3");
+
+//Function to loop theme
+function playMusic(millionaire){
+	millionaire.addEventListener('ended', function(){
+	this.currentTime = 0; 
+	this.play();
+}, false);
+millionaire.play(); 
+}
+
 
 //When Start button is clicked, run the questionGen function.
 	$('.start').on("click", function(){
 		questionGen(questionNumber)
+		playMusic(millionaire);
 	});
 
 //All possible on click actions. Is there a way to clean this up??
@@ -175,7 +190,6 @@ $('.jumbotron').on('click', '#final', function(){
 	
 	finalAnswer(optionChosen, questionNumber)
 });
-
 
 
 //FUNCTION DECLARATIONS----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
