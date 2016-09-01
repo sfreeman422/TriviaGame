@@ -128,6 +128,12 @@ var number = startAt;
 //Variable to indicate whether or not we are on a win/loss screen
 var winLossIndicator = false; 
 
+//Variable to account for correct sound.
+var yay = new Audio("assets/sounds/yay.mp3");
+
+//Variable to account for incorrect/time out sound. 
+var boo = new Audio("assets/sounds/fail.mp3");
+
 //When Start button is clicked, run the questionGen function.
 	$('.start').on("click", function(){
 		questionGen(questionNumber)
@@ -198,6 +204,7 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'correct'>Correct!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
+	 	yay.play();
 	 	questionNumber++;
 	 	optionChosen = 0;  
 	 	correct++;
@@ -208,6 +215,7 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'error'>Out of time!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
+	 	fail.play();
 	 	questionNumber++;
 	 	optionChosen = 0;
 	 	incorrect++;
@@ -218,6 +226,7 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'error'>Wrong!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
+	 	fail.play();
 	 	questionNumber++;
 	 	optionChosen = 0;
 	 	incorrect++;
