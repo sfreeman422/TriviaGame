@@ -138,6 +138,9 @@ boo.volume = 0.3;
 //Variable to declare theme
 var millionaire = new Audio("assets/sounds/millionaire.mp3");
 
+//Variable to create Mr. Mackey Wrong sound file
+var wrong = new Audio("assets/sounds/wrong.mp3");
+
 //Function to loop theme
 function playMusic(millionaire){
 	millionaire.addEventListener('ended', function(){
@@ -240,7 +243,7 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'error'>Wrong!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
-	 	boo.play();
+	 	wrong.play();
 	 	questionNumber++;
 	 	optionChosen = 0;
 	 	incorrect++;
