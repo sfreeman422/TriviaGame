@@ -182,8 +182,8 @@ function questionGen(questionNumber){
 	$('.jumbotron').append((questions[questionNumber]).option2);
 	$('.jumbotron').append((questions[questionNumber]).option3);
 	$('.jumbotron').append((questions[questionNumber]).option4);
-	$('.jumbotron').append("<button class = 'btn btn-success' id = 'final'>Final Answer?</button>"); 
-	$('.jumbotron').append("<div class = timer></div>")
+	$('.jumbotron').append("<br><div class = 'text-center'><button class = 'btn btn-success' id = 'final'>Final Answer?</button></div>"); 
+	$('.jumbotron').append("<br><div class = timer></div>")
 	winLossIndicator = false; 
 	displayNumber();
 	runTimer();
@@ -197,7 +197,7 @@ function finalAnswer(option, questionNo){
 	 	//Go to correct answer screen
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'correct'>Correct!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
-	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Time Remaining: 15</p></div>");
+	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
 	 	questionNumber++;
 	 	optionChosen = 0;  
 	 	correct++;
@@ -207,7 +207,7 @@ function finalAnswer(option, questionNo){
 	 else if(option == 5){
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'error'>Out of time!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
-	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Time Remaining: 15</p></div>");
+	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
 	 	questionNumber++;
 	 	optionChosen = 0;
 	 	incorrect++;
@@ -217,7 +217,7 @@ function finalAnswer(option, questionNo){
 	 else{
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'error'>Sorry! That was incorrect.</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
-	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Time Remaining: 15</p></div>");
+	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
 	 	questionNumber++;
 	 	optionChosen = 0;
 	 	incorrect++;
@@ -244,7 +244,12 @@ function nextQuestion(questionNumber){
 
 //Pushes the number to the screen to show the user where they are at in the timer. 
 function displayNumber(){
-	$('.timer').html('<p>Time Remaining: '+number+'</p>');
+	if(winLossIndicator == false){
+		$('.timer').html('<p>Time Remaining: '+number+'</p>');
+	}
+	else if(winLossIndicator == true){
+		$('.timer').html('<p>Next Question Available In: '+number+'</p>');
+	}
 }
 
 //Begins the timer and is called each time that a new quetsion is generated. 

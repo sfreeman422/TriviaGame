@@ -3,6 +3,9 @@ html {
     position: relative;
     min-height: 100%;
 }
+*{
+	font-family: 'Heebo', sans-serif;
+}
 .carousel-fade .carousel-inner .item {
     opacity: 0;
     transition-property: opacity;
@@ -100,7 +103,7 @@ h1, h2, h3, p, h4{
 	color: white;
 }
 h2{
-	font-size: 24px;
+	font-size: 36px;
 }
 
 h3{
