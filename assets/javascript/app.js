@@ -120,7 +120,7 @@ var correct = 0;
 var incorrect = 0; 
 
 //Variable to set number counter to 5 seconds.
-var startAt = 10;
+var startAt = 15;
 
 //Variable that displays the time remaining on screen. 
 var number = startAt;
@@ -163,6 +163,7 @@ $('.jumbotron').on('click', '#final', function(){
 	if(optionChosen != 0){
 		stop();
 	}
+	
 	finalAnswer(optionChosen, questionNumber)
 });
 
