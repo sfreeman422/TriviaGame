@@ -1,4 +1,0 @@
-To Do:
-1. Add timer to win/lose screens to advance the game without user input
-2. Add songs that play for the alotted time each win/lose screen is up. 
-3. Clean up on click actions to perhaps be one function?
