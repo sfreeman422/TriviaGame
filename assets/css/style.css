@@ -3,9 +3,7 @@ html {
     position: relative;
     min-height: 100%;
 }
-*{
-	font-family: 'Heebo', sans-serif;
-}
+
 .carousel-fade .carousel-inner .item {
     opacity: 0;
     transition-property: opacity;
@@ -101,6 +99,7 @@ html {
 }
 h1, h2, h3, p, h4{
 	color: white;
+	font-family: 'Heebo', sans-serif; 
 }
 h2{
 	font-size: 36px;
@@ -139,10 +138,7 @@ h4{
 #final{
 	margin: 0 auto;
 }
-.pic-screen{
-	height: 200px;
-	width: 250px;
-}
+
 .option{
 	margin: 0;
 	padding: 0;

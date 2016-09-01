@@ -216,7 +216,7 @@ function finalAnswer(option, questionNo){
 	 }
 	 else{
 	 	$('.jumbotron').empty();
-	 	$('.jumbotron').html("<h2 id = 'error'>Sorry! That was incorrect.</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
+	 	$('.jumbotron').html("<h2 id = 'error'>Wrong!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
 	 	questionNumber++;
 	 	optionChosen = 0;
