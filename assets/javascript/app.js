@@ -215,7 +215,7 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'error'>Out of time!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
-	 	fail.play();
+	 	boo.play();
 	 	questionNumber++;
 	 	optionChosen = 0;
 	 	incorrect++;
@@ -226,7 +226,7 @@ function finalAnswer(option, questionNo){
 	 	$('.jumbotron').empty();
 	 	$('.jumbotron').html("<h2 id = 'error'>Wrong!</h2><img src = '"+questions[questionNo].image+"' class = 'pic-screen'><p>"+questions[questionNo].correctAnswerDisplay+"</p>");
 	 	$('.jumbotron').append("<div class = 'timer text-center'><p>Next Question Available In: 15</p></div>");
-	 	fail.play();
+	 	boo.play();
 	 	questionNumber++;
 	 	optionChosen = 0;
 	 	incorrect++;
